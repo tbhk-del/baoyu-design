@@ -12,6 +12,14 @@
 
 ---
 
+## 截图
+
+| Cursor | Codex | Claude |
+|---|---|---|
+| <img src="assets/screenshots/cursor-reader-mac-app.jpeg" alt="Cursor 运行 baoyu-design" width="320"> | <img src="assets/screenshots/codex-reader-mac-app.png" alt="Codex 运行 baoyu-design" width="320"> | <img src="assets/screenshots/claude-reader-mac-app.png" alt="Claude 运行 baoyu-design" width="320"> |
+
+---
+
 ## 为什么在本地跑
 
 - **摆脱对网站的依赖。** 不必离开编辑器，就能用上 `claude.ai/design` 绝大部分的功能 —— 同一套方法论、同样的工艺标准、同样的产出格式。

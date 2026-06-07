@@ -12,6 +12,14 @@ No website, no separate subscription, no upload step. The agent already on your 
 
 ---
 
+## Screenshots
+
+| Cursor | Codex | Claude |
+|---|---|---|
+| <img src="assets/screenshots/cursor-reader-mac-app.jpeg" alt="Cursor running baoyu-design" width="320"> | <img src="assets/screenshots/codex-reader-mac-app.png" alt="Codex running baoyu-design" width="320"> | <img src="assets/screenshots/claude-reader-mac-app.png" alt="Claude running baoyu-design" width="320"> |
+
+---
+
 ## Why run it locally
 
 - **Free yourself from the website.** You get the vast majority of `claude.ai/design`'s capabilities without ever leaving your editor — same methodology, same craft standards, same output format.
