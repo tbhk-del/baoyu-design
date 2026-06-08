@@ -3,14 +3,19 @@ name: baoyu-design
 description: >-
   Create polished design artifacts as self-contained HTML — UI mockups, interactive
   prototypes, wireframes, landing pages, dashboards, app screens, mobile apps, and
-  slide decks. Use this skill whenever the user wants to design, mock up, prototype,
-  wireframe, or visualize any interface, screen, flow, or visual artifact — even
-  when they don't say the word "design" (e.g. "build me a landing page", "show me
-  what a settings screen could look like", "prototype an onboarding flow", "wireframe
-  a few layout ideas", "make a pitch deck"). It drives a full design process:
+  slide decks — and set up, import, or author reusable design systems / UI kits. Use
+  this skill whenever the user wants to design, mock up, prototype, wireframe, or
+  visualize any interface, screen, flow, or visual artifact — even when they don't say
+  the word "design" (e.g. "build me a landing page", "show me what a settings screen
+  could look like", "prototype an onboarding flow", "wireframe a few layout ideas",
+  "make a pitch deck"). Also use it to set up a design system, import an existing
+  design system, create a design system or UI kit, or author brand tokens and
+  components (e.g. "set up a design system for our brand", "import this design system",
+  "create a design system", "build a UI kit"). It drives a full design process:
   clarifying questions, design-context gathering, and production of one or more HTML
-  deliverables. Runs on portable agent harnesses including Claude Code, Cursor, and
-  Codex Agent — harness-specific tools are resolved from references/.
+  deliverables — and, for design systems, compiling a loadable component bundle. Runs
+  on portable agent harnesses including Claude Code, Cursor, and Codex Agent —
+  harness-specific tools are resolved from references/.
 ---
 
 # Design

@@ -100,22 +100,6 @@ When the deliverable is ready, preview it over the served URL (above), confirm i
 
 Browser preview, screenshots, and DevTools debugging come from MCP servers (`cursor-ide-browser`, `user-chrome-devtools`, `cursor-app-control`), invoked via `CallMcpTool`. **Always read a tool's JSON descriptor before calling it the first time** so you pass the right arguments.
 
-## Design-system compiler & checker (read-only)
+## Design-system checker subagent
 
-Only relevant when **authoring a design system** (see [`built-in-skills/design-system-authoring-guide.md`](../built-in-skills/design-system-authoring-guide.md)). The web product's automatic compiler and `check_design_system` tool don't exist here; two portable `node` scripts in `agents/` replace them.
-
-- **Compiler** (write step) — a plain `Shell` call, identical on every harness. After editing components/tokens/cards, regenerate the artifacts:
-
-  ```
-  node <skill>/agents/compile-design-system.mjs designs/<project>
-  ```
-
-  It writes `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`. Run it yourself; nothing runs automatically.
-
-- **Checker** (read-only) — writes nothing, so run it inline with `Shell` whenever you want a quick report:
-
-  ```
-  node <skill>/agents/check-design-system.mjs designs/<project>
-  ```
-
-  To run it as an **isolated read-only subagent** after a batch of edits, spawn a `Task` subagent with the prompt in [`../agents/design-system-checker.md`](../agents/design-system-checker.md), passing it the project directory and this skill's `agents/` path. The subagent only runs the checker and relays its output — it must not edit files or call the compiler. Use a subagent to keep the report out of your own context; otherwise the inline `Shell` call is fine.
+Only when **authoring a design system** — the compiler (`compile-design-system.mjs`) and checker (`check-design-system.mjs`) commands and the full flow live in [`design-system-authoring-guide.md`](../built-in-skills/design-system-authoring-guide.md). Both are plain `Shell` `node <skill>/agents/…` calls and run inline. Harness-specific bit: to run the read-only checker as an **isolated subagent**, spawn a **`Task`** subagent with the prompt in [`../agents/design-system-checker.md`](../agents/design-system-checker.md), passing the project directory and this skill's `agents/` path — it only runs `check-design-system.mjs` and relays output; it must not edit files or compile.

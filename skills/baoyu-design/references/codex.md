@@ -74,25 +74,9 @@ Codex subagents consume additional context and are not the default for this skil
 
 For normal design work, preview, screenshot, console-check, and debug in the current agent.
 
-## Design-system compiler & checker (read-only)
+## Design-system checker subagent
 
-Only relevant when **authoring a design system** (see [`built-in-skills/design-system-authoring-guide.md`](../built-in-skills/design-system-authoring-guide.md)). The web product's automatic compiler and `check_design_system` tool don't exist here; two portable `node` scripts in `agents/` replace them.
-
-- **Compiler** (write step) — a plain shell call, identical on every harness. After editing components/tokens/cards, regenerate the artifacts:
-
-  ```
-  node <skill>/agents/compile-design-system.mjs designs/<project>
-  ```
-
-  It writes `_ds_bundle.js`, `_ds_manifest.json`, `_adherence.oxlintrc.json`. Run it yourself; nothing runs automatically.
-
-- **Checker** (read-only) — writes nothing, so run it inline in the current agent whenever you want a quick report:
-
-  ```
-  node <skill>/agents/check-design-system.mjs designs/<project>
-  ```
-
-  Run the checker inline by default. Only spawn a separate read-only subagent (with the prompt in [`../agents/design-system-checker.md`](../agents/design-system-checker.md), passing the project directory and this skill's `agents/` path) if the user explicitly asks for subagent work and multi-agent tools are available. Either way it only runs the checker and relays its output — it must not edit files or call the compiler.
+Only when **authoring a design system** — the compiler (`compile-design-system.mjs`) and checker (`check-design-system.mjs`) commands and the full flow live in [`design-system-authoring-guide.md`](../built-in-skills/design-system-authoring-guide.md). Both are plain shell `node <skill>/agents/…` calls and run inline. Harness-specific bit: run the read-only checker **inline in the current agent** by default; spawn a separate read-only subagent (same prompt, [`../agents/design-system-checker.md`](../agents/design-system-checker.md), passing the project directory and this skill's `agents/` path) only if the user asks and multi-agent tools are available — it only runs `check-design-system.mjs` and relays output; it must not edit files or compile.
 
 ## Codex-specific notes
 
