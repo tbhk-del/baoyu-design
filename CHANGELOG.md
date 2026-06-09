@@ -14,6 +14,9 @@ All notable changes to `baoyu-design` are tracked in this file.
 
 ### Changed
 
+- The design-system compiler now also exposes PascalCase exports of `.jsx`/`.tsx` files that lack a sibling `.d.ts` on `window.<Namespace>` (collision-guarded — a `.d.ts`-backed component always keeps its name), so such files are bundled and exported but carry no props contract, adherence rules, or starting-point eligibility.
+- Expanded the authoring guide's GitHub source-import flow into concrete steps: browse a repo tree with `gh api` without cloning, sparse-checkout only the needed path prefixes into a scratch dir outside the design-system folder (a clone inside it would pollute compiler discovery), and stop to ask the user when a repo is private or unreachable.
+- Aligned component authoring docs with the compiler: components import React only and may import siblings with relative paths (the compiler strips/rewrites these at bundle time); `app.css` is documented as an accepted global-CSS entry name.
 - Project setup now asks where to save the project and which design system(s) to use (none, one, or several); reopening a project reloads its bound design systems from `_d_meta.json` before designing.
 - Documented importing and using existing design systems in the English and Simplified Chinese README files.
 - Clarified that final design and prototype delivery should include the running preview, not only the generated file.
