@@ -4,6 +4,20 @@
 
 本文档记录 `baoyu-design` 的重要变更。
 
+## 1.0.0 - 2026-06-22
+
+### 新功能
+- 发布可移植的 `baoyu-design` Agent Skill，包含核心设计方法、Claude Code/Cursor/Codex 运行环境参考、内置设计流程、starter components、设计系统工具，以及本地导入/导出 agents。
+- 新增 `release-skills`，提供可复用的发布流程，覆盖版本选择、多语言 changelog、annotated tag 和 GitHub Release。
+- 新增本地 deck、文档、PPTX、视频、图片生成、Figma `.fig`、GitHub 仓库、HTML/CSS 导入，以及设计系统 preview 流程。
+
+### 修复
+- `gen-pptx`：通过按 z-index 顺序绘制子元素、向导出子树传播祖先 opacity、光栅化渐变蒙版、保留 Unicode 文件名、保留文本换行，并为卡住的 capture 加逐次超时，提高 editable PowerPoint 导出的视觉一致性。
+- `make-a-deck`：补充全高 slide wrapper 规则，确保全出血幻灯片内容能稳定导出。
+
+### 文档
+- 在英文和中文 README 中补充安装、本地使用、设计系统、导入来源、deck/PPTX 导出，以及支持的 agent 运行环境。
+
 ## 2026-06-19
 
 ### 新功能

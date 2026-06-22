@@ -4,6 +4,20 @@ English | [中文](./CHANGELOG.zh.md)
 
 All notable changes to `baoyu-design` are tracked in this file.
 
+## 1.0.0 - 2026-06-22
+
+### Features
+- Ship the portable `baoyu-design` Agent Skill with the core design methodology, harness references for Claude Code, Cursor, and Codex, built-in design workflows, starter components, design-system tooling, and local import/export agents.
+- Add `release-skills`, a reusable release workflow for version selection, multi-language changelogs, annotated tags, and GitHub Releases.
+- Add local deck, document, PPTX, video, image-generation, Figma `.fig`, GitHub repo, HTML/CSS import, and design-system preview flows.
+
+### Fixes
+- `gen-pptx`: improve editable PowerPoint fidelity by rendering children in z-index order, propagating ancestor opacity through exported subtrees, rasterizing gradient overlays, preserving Unicode filenames, preserving line breaks, and guarding stuck captures with per-call timeouts.
+- `make-a-deck`: document full-height slide wrappers so full-bleed slide content exports reliably.
+
+### Documentation
+- Document installation, local usage, design systems, import sources, deck/PPTX export, and the supported agent harnesses in the English and Chinese READMEs.
+
 ## 2026-06-19
 
 ### Features
